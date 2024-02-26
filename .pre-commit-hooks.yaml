@@ -1,0 +1,6 @@
+- id: runners-executable
+  name: ensure runners are marked as executable
+  language: system
+  entry: chmod +x
+  files: (^|/)runners/.*$
+  stages: [commit, push, manual]
