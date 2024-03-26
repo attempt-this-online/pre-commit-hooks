@@ -4,3 +4,11 @@
   entry: chmod +x
   files: (^|/)runners/.*$
   stages: [commit, push, manual]
+
+- id: regenerate-ci-config
+  name: regenerate GitLab CI config for building images
+  language: system
+  stages: [commit, push, manual]
+  entry: python gen_ci_config.py
+  pass_filenames: false
+  always_run: true
